@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="test" name="test" class="prv.rcl.service.impl.UserServiceImpl">
+    </bean>
+    <!--
+       scope type
+       prototype 每次调用都创建一个实例
+       request 在一次 HTTP 请求中，每个 Bean 定义对应一个实例。该作用域仅在基于 Web 的 Spring 上下文（Spring MVC）中才有效
+       session 在一个 HTTP session 中，每个 Bean 定义对应一个实例。
+       global-session 在一个全局 HTTP session 中，每个Bean定义对应一个实例。该作用域仅在 Portlet 上下文中才有效
+     -->
+    <bean id="ticket" name="ticket" class="prv.rcl.pojo.Ticket" scope="singleton"
+          init-method="initTicket"
+          destroy-method="destory"
+    />
+</beans>
