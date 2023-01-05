@@ -130,7 +130,13 @@ ApplicationContext 提供了 BeanFactory 不具备的新特性。
 
   在 初始化 Bean 前后做处理 `postProcessBeforeInitialization` 初始化前执行 `postProcessAfterInitialization` 初始化后执行
 
-  AOP 实现原理( cglib ， jdk 动态代理)
+  ( `AbstractAutoProxyCreator`  )AOP 实现原理( cglib ， jdk 动态代理)
   
 `BeanFactoryPostProcessor`  -> 用来处理 Bean 的 定义信息的
+
+`Environment` -> 为了方便使用，在容器创建的时候会提前加系统相关属性加载到 `StandardEnvironment` 对象中，方便后续使用
+
+`BeanDefinition` -> IOC 容器存储内部的数据结构
+
+`BeanDefinitionHolder` -> 持有一个 BeanDefinition 、beanDefinition 的 beanName 和 alias
 

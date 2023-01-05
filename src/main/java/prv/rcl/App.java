@@ -28,5 +28,7 @@ public class App {
         UserService bean = xmlBeanFactory.getBean("test", UserService.class);
         Ticket ticket = xmlBeanFactory.getBean("ticket", Ticket.class);
         bean.execute();
+
+
     }
 }
